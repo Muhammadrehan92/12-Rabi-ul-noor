@@ -1,0 +1,284 @@
+/* Hero Section */
+
+.seerat-hero{
+
+    height:420px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("../images/seerat-banner.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    color:white;
+
+}
+
+
+.seerat-hero-content span{
+
+    color:#d4af37;
+    font-size:18px;
+    font-weight:600;
+
+}
+
+
+.seerat-hero-content h1{
+
+    font-size:48px;
+    margin:15px 0;
+
+}
+
+
+.seerat-hero-content p{
+
+    font-size:18px;
+    max-width:650px;
+    line-height:1.8;
+
+}
+
+
+
+/* Introduction Section */
+
+
+.seerat-intro{
+
+    padding:80px 8%;
+    background:#f8faf9;
+
+}
+
+
+
+/* Section Title */
+
+
+.section-title{
+
+    text-align:center;
+    max-width:700px;
+    margin:auto;
+
+}
+
+
+.section-title span{
+
+    color:#0f766e;
+    font-weight:600;
+
+}
+
+
+.section-title h2{
+
+    font-size:36px;
+    margin:15px 0;
+
+}
+
+
+.section-title p{
+
+    color:#666;
+    line-height:1.8;
+
+}
+
+
+
+/* Seerat Cards */
+
+
+.seerat-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:50px;
+
+}
+
+
+
+.seerat-card{
+
+    background:white;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+
+
+.seerat-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+/* Icons */
+
+
+.seerat-card i{
+
+    width:75px;
+    height:75px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:auto;
+
+    background:#0f766e;
+
+    color:white;
+
+    border-radius:50%;
+
+    font-size:30px;
+
+}
+
+
+
+/* Card Heading */
+
+
+.seerat-card h3{
+
+    font-size:22px;
+
+    margin:25px 0 15px;
+
+}
+
+
+
+/* Card Paragraph */
+
+
+.seerat-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+
+
+/* Link */
+
+
+.seerat-card a{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    text-decoration:none;
+
+    color:#0f766e;
+
+    font-weight:600;
+
+}
+
+
+
+.seerat-card a:hover{
+
+    color:#d4af37;
+
+}
+
+
+
+/* Responsive */
+
+
+@media(max-width:992px){
+
+
+.seerat-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.seerat-hero-content h1{
+
+    font-size:38px;
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.seerat-intro{
+
+    padding:60px 5%;
+
+}
+
+
+.seerat-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.seerat-hero{
+
+    height:300px;
+
+}
+
+
+.seerat-hero-content h1{
+
+    font-size:30px;
+
+}
+
+
+.section-title h2{
+
+    font-size:28px;
+
+}
+
+
+}
