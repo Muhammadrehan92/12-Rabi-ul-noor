@@ -2,7 +2,7 @@
     position:relative;
     width:100%;
     min-height:65vh;
-    background: url("../images/about hero.jpg") center/cover no-repeat;
+    background: url("../images/about-hero.jpg") center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
