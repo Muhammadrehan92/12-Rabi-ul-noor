@@ -80,8 +80,19 @@ document.addEventListener("DOMContentLoaded", function(){
         btn.addEventListener("click", function(){
             const card = this.closest(".naat-card");
             const audio = card.querySelector("audio");
+            const progress = card.querySelector(".progress-bar");
             const icon = this.querySelector("i");
+audio.addEventListener("loadedmetadata", () => {
+    progress.max = audio.duration;
+});
 
+audio.addEventListener("timeupdate", () => {
+    progress.value = audio.currentTime;
+});
+
+progress.addEventListener("input", () => {
+    audio.currentTime = progress.value;
+});
             if (currentPlayingAudio && currentPlayingAudio !== audio) {
                 currentPlayingAudio.pause();
                 if (currentPlayingCard) {
