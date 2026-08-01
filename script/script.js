@@ -71,88 +71,171 @@ document.addEventListener("DOMContentLoaded", function(){
     // ==========================================
 
     // A. Single Active Audio Playback
-    const playBtns = document.querySelectorAll(".play-btn");
-    const allAudios = document.querySelectorAll(".naat-card audio");
-    let currentPlayingAudio = null;
-    let currentPlayingCard = null;
+   const playBtns = document.querySelectorAll(".play-btn");
+const allAudios = document.querySelectorAll(".naat-card audio");
 
-    playBtns.forEach(btn => {
-        btn.addEventListener("click", function(){
-            const card = this.closest(".naat-card");
-            const audio = card.querySelector("audio");
-            const progress = card.querySelector(".progress-bar");
-            const icon = this.querySelector("i");
-audio.addEventListener("loadedmetadata", () => {
-    progress.max = audio.duration;
-});
+let currentPlayingAudio = null;
+let currentPlayingCard = null;
 
-audio.addEventListener("timeupdate", () => {
-    progress.value = audio.currentTime;
-});
 
-progress.addEventListener("input", () => {
-    audio.currentTime = progress.value;
-});
-            if (currentPlayingAudio && currentPlayingAudio !== audio) {
-                currentPlayingAudio.pause();
-                if (currentPlayingCard) {
-                    currentPlayingCard.classList.remove("playing");
-                    const prevBtn = currentPlayingCard.querySelector(".play-btn i");
-                    if (prevBtn) {
-                        prevBtn.classList.remove("fa-pause");
-                        prevBtn.classList.add("fa-play");
-                    }
-                }
-            }
+// ===============================
+// Audio Setup
+// ===============================
 
-            if (audio.paused) {
-                audio.play().then(() => {
-                    audio.volume = 0.5;
-                    card.classList.add("playing");
-                    icon.classList.remove("fa-play");
-                    icon.classList.add("fa-pause");
-                    currentPlayingAudio = audio;
-                    currentPlayingCard = card;
-                }).catch(err => {
-                    console.log("Audio playback error:", err);
-                    // Visual fallback toggle if audio stream is blocked
-                    card.classList.toggle("playing");
-                    if (icon.classList.contains("fa-play")) {
-                        icon.classList.remove("fa-play");
-                        icon.classList.add("fa-pause");
-                    } else {
-                        icon.classList.remove("fa-pause");
-                        icon.classList.add("fa-play");
-                    }
-                });
-            } else {
-                audio.pause();
-                card.classList.remove("playing");
-                icon.classList.remove("fa-pause");
-                icon.classList.add("fa-play");
-                currentPlayingAudio = null;
-                currentPlayingCard = null;
-            }
-        });
+allAudios.forEach(audio => {
+
+    const card = audio.closest(".naat-card");
+    const progress = card.querySelector(".progress-bar");
+
+    // Audio metadata loaded
+    audio.addEventListener("loadedmetadata", () => {
+
+        progress.max = audio.duration;
+
+        progress.value = 0;
+
     });
 
-    // Reset play button when audio ends naturally
-    allAudios.forEach(audio => {
-        audio.addEventListener("ended", function(){
-            const card = this.closest(".naat-card");
-            if (card) {
-                card.classList.remove("playing");
-                const icon = card.querySelector(".play-btn i");
-                if (icon) {
-                    icon.classList.remove("fa-pause");
-                    icon.classList.add("fa-play");
-                }
-            }
+
+    // Update progress bar
+    audio.addEventListener("timeupdate", () => {
+
+        progress.value = audio.currentTime;
+
+    });
+
+
+    // Seek audio
+    progress.addEventListener("input", () => {
+
+        audio.currentTime = progress.value;
+
+    });
+
+
+    // Audio ended
+    audio.addEventListener("ended", () => {
+
+        card.classList.remove("playing");
+
+        const icon = card.querySelector(".play-btn i");
+
+        if (icon) {
+
+            icon.classList.remove("fa-pause");
+            icon.classList.add("fa-play");
+
+        }
+
+        progress.value = 0;
+
+        if (currentPlayingAudio === audio) {
+
             currentPlayingAudio = null;
             currentPlayingCard = null;
-        });
+
+        }
+
     });
 
+
+    // Audio error
+    audio.addEventListener("error", () => {
+
+        console.log("Audio Error:", audio.src);
+
+    });
+
+});
+
+
+// ===============================
+// Play / Pause Buttons
+// ===============================
+
+playBtns.forEach(btn => {
+
+    btn.addEventListener("click", function () {
+
+        const card = this.closest(".naat-card");
+        const audio = card.querySelector("audio");
+        const icon = this.querySelector("i");
+
+
+        // Stop previous audio
+        if (
+            currentPlayingAudio &&
+            currentPlayingAudio !== audio
+        ) {
+
+            currentPlayingAudio.pause();
+            currentPlayingAudio.currentTime = 0;
+
+            if (currentPlayingCard) {
+
+                currentPlayingCard.classList.remove("playing");
+
+                const prevIcon =
+                    currentPlayingCard.querySelector(".play-btn i");
+
+                if (prevIcon) {
+
+                    prevIcon.classList.remove("fa-pause");
+                    prevIcon.classList.add("fa-play");
+
+                }
+
+            }
+
+        }
+
+
+        // Play
+        if (audio.paused) {
+
+            audio.volume = 0.5;
+
+            audio.play()
+                .then(() => {
+
+                    card.classList.add("playing");
+
+                    icon.classList.remove("fa-play");
+                    icon.classList.add("fa-pause");
+
+                    currentPlayingAudio = audio;
+                    currentPlayingCard = card;
+
+                })
+                .catch(error => {
+
+                    console.log(
+                        "Audio playback error:",
+                        error
+                    );
+
+                });
+
+        }
+
+        // Pause
+        else {
+
+            audio.pause();
+
+            card.classList.remove("playing");
+
+            icon.classList.remove("fa-pause");
+            icon.classList.add("fa-play");
+
+            currentPlayingAudio = null;
+            currentPlayingCard = null;
+
+        }
+
+    });
+
+});
     // B. Category Filter Tabs
     const filterBtns = document.querySelectorAll(".naat-filter-btn");
     const naatCards = document.querySelectorAll(".naat-card");
