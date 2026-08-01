@@ -4,8 +4,9 @@
 
 .gallery-hero{
     position:relative;
-    height:65vh;
-   background: url("../images/gallery.hero.jpg") center/cover no-repeat;
+    min-height:55vh;
+    padding:60px 20px;
+    background: url("../images/gallery.hero.jpg") center/cover no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -16,7 +17,7 @@
 .gallery-overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.60);
+
 }
 
 .gallery-hero-content{
@@ -29,17 +30,19 @@
 
 .gallery-hero-content span{
     display:inline-block;
-    background:#0b7d4c;
-    color:#fff;
-    padding:8px 18px;
-    border-radius:30px;
+    background:rgba(212,175,55,.18);
+    color:#D4AF37;
+    border:1px solid rgba(212,175,55,.5);
+    padding:8px 22px;
+    border-radius:50px;
     font-size:14px;
+    font-weight:600;
     letter-spacing:1px;
     margin-bottom:18px;
 }
 
 .gallery-hero-content h1{
-    font-size:56px;
+    font-size:48px;
     margin-bottom:20px;
     font-weight:700;
 }
@@ -55,7 +58,7 @@
 ===========================*/
 
 .gallery-filter{
-    padding:70px 8% 40px;
+    padding:40px 8% 20px;
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
@@ -79,7 +82,7 @@
 
 .gallery-filter button:hover,
 .gallery-filter button.active{
-    background:#0b7d4c;
+    background:#0D5C31;
     color:#fff;
     transform:translateY(-3px);
 }
@@ -89,7 +92,7 @@
 ===========================*/
 
 .gallery-section{
-    padding:20px 8% 90px;
+    padding:10px 8% 70px;
     background:#f8faf9;
 }
 

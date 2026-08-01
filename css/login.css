@@ -1,0 +1,522 @@
+.auth-page{
+
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+
+/* =========================
+   LEFT INFO
+========================= */
+
+.auth-info{
+
+    background:#0D5C31;
+
+    color:#fff;
+
+    padding:70px 10%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.auth-info::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border:1px solid rgba(212,175,55,.25);
+
+    border-radius:50%;
+
+    top:-150px;
+
+    left:-150px;
+
+}
+
+
+.auth-info::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border:1px solid rgba(212,175,55,.2);
+
+    border-radius:50%;
+
+    bottom:-150px;
+
+    right:-100px;
+
+}
+
+
+.info-icon{
+
+    width:85px;
+
+    height:85px;
+
+    border-radius:22px;
+
+    background:#D4AF37;
+
+    color:#0D5C31;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:36px;
+
+    margin-bottom:30px;
+
+}
+
+
+.auth-info h1{
+
+    font-size:38px;
+
+    margin-bottom:18px;
+
+}
+
+
+.auth-info > p{
+
+    max-width:500px;
+
+    color:#e4eee8;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+
+}
+
+
+.info-line{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:18px;
+
+    color:#f4f8f5;
+
+}
+
+
+.info-line i{
+
+    width:35px;
+
+    color:#D4AF37;
+
+    font-size:18px;
+
+}
+
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.auth-box{
+
+    background:#fff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:50px 12%;
+
+}
+
+
+.form-box{
+
+    width:100%;
+
+    max-width:480px;
+
+    margin:auto;
+
+}
+
+
+.form-box.hidden{
+
+    display:none;
+
+}
+
+
+.form-heading{
+
+    margin-bottom:28px;
+
+}
+
+
+.form-heading span{
+
+    color:#D4AF37;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+.form-heading h2{
+
+    color:#0D5C31;
+
+    font-size:32px;
+
+    margin:5px 0;
+
+}
+
+
+.form-heading p{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-group{
+
+    margin-bottom:18px;
+
+}
+
+
+.input-group label{
+
+    display:block;
+
+    color:#444;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:7px;
+
+}
+
+
+.input-field{
+
+    display:flex;
+
+    align-items:center;
+
+    border:1px solid #dce7df;
+
+    background:#f9fbfa;
+
+    border-radius:10px;
+
+    padding:0 14px;
+
+    transition:.3s;
+
+}
+
+
+.input-field:focus-within{
+
+    border-color:#0D5C31;
+
+    box-shadow:0 0 0 3px rgba(13,92,49,.08);
+
+}
+
+
+.input-field > i{
+
+    color:#0D5C31;
+
+    width:25px;
+
+}
+
+
+.input-field input{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    padding:14px 8px;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+}
+
+
+.password-toggle{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    color:#777;
+
+    padding:5px;
+
+}
+
+
+/* =========================
+   OPTIONS
+========================= */
+
+.form-options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:5px 0 22px;
+
+    font-size:12px;
+
+}
+
+
+.remember{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#666;
+
+}
+
+
+.form-options a{
+
+    color:#0D5C31;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+
+.form-options a:hover{
+
+    color:#D4AF37;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.auth-btn{
+
+    width:100%;
+
+    border:none;
+
+    background:#0D5C31;
+
+    color:#fff;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.auth-btn i{
+
+    margin-right:7px;
+
+}
+
+
+.auth-btn:hover{
+
+    background:#094b27;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(13,92,49,.18);
+
+}
+
+
+/* =========================
+   SWITCH
+========================= */
+
+.switch-form{
+
+    text-align:center;
+
+    margin-top:25px;
+
+}
+
+
+.switch-form p{
+
+    display:inline;
+
+    color:#777;
+
+    font-size:13px;
+
+}
+
+
+.switch-form button{
+
+    border:none;
+
+    background:none;
+
+    color:#0D5C31;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    margin-left:4px;
+
+}
+
+
+.switch-form button:hover{
+
+    color:#D4AF37;
+
+}
+
+
+/* =========================
+   TERMS
+========================= */
+
+.terms{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:#777;
+
+    font-size:11px;
+
+    margin:5px 0 20px;
+
+}
+
+
+/* =========================
+   BACK HOME
+========================= */
+
+.back-home{
+
+    display:block;
+
+    text-align:center;
+
+    color:#0D5C31;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    margin-top:25px;
+
+}
+
+
+.back-home:hover{
+
+    color:#D4AF37;
+
+}

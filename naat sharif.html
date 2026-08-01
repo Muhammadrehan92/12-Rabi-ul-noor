@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>12 Rabi-ul-Noor ﷺ | Home</title>
+    <title>12 Rabi-ul-Noor ﷺ | Naat Sharif</title>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,8 +19,8 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/naat sharif.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/naat sharif.css">
 
 
 </head>
@@ -38,33 +38,25 @@
                 <span>12 Rabi-ul-Noor ﷺ</span>
             </div>
 
-             <nav class="navbar">
+            <nav class="navbar">
 
-
-
-    <ul class="nav-links" id="navLinks">
-
-      
+                <ul class="nav-links" id="navLinks">
                     <li><a href="index.html">Home</a></li>
-
                     <li><a href="about.html">About</a></li>
-
                     <li><a href="naat sharif.html" class="active">Naat Sharif</a></li>
-
                     <li><a href="events.html">Events</a></li>
-
                     <li><a href="seerat.html">Seerat</a></li>
-
                     <li><a href="gallery.html">Gallery</a></li>
-    </ul>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
 
-    <div class="menu-toggle" id="menuToggle">
-        <i class="fa-solid fa-bars"></i>
-    </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
 
-</nav>
+            </nav>
 
-            <a href="#durood" class="btn">Recite Durood</a>
+            <a href="index.html#durood" class="btn">Recite Durood</a>
 
         </div>
 
@@ -114,7 +106,7 @@
 
             <div class="featured-reciter">
                 <i class="fa-solid fa-microphone"></i>
-                <span>Owais Raza Qadri</span>
+                <span>Farhan Ali Qadri</span>
             </div>
 
             <p>
@@ -125,21 +117,42 @@
 
             <div class="featured-buttons">
 
-                <a href="#" class="listen-btn">
-                    <i class="fa-solid fa-play"></i>
-                    Listen Now
-                </a>
+    <a href="#" class="listen-btn" id="featuredPlayBtn">
+        <i class="fa-solid fa-play"></i>
+        <span>Listen Now</span>
+    </a>
 
-                <a href="#" class="lyrics-btn">
-                    <i class="fa-solid fa-file-lines"></i>
-                    Read Lyrics
-                </a>
+    <a href="#" class="lyrics-btn">
+        <i class="fa-solid fa-file-lines"></i>
+        Read Lyrics
+    </a>
 
-            </div>
+</div>
+<div class="featured-audio-player">
 
-        </div>
+    <span class="audio-time" id="featuredCurrentTime">
+        6:28
+    </span>
 
-    </div>
+    <input
+        type="range"
+        id="featuredProgress"
+        class="featured-progress"
+        value="0"
+        min="0"
+        step="0.1"
+    >
+
+    <span class="audio-time" id="featuredDuration">
+        0:00
+    </span>
+
+</div>
+
+<audio id="featuredAudio" preload="metadata">
+
+    <source src="audio/Noor wala haya hai By Farhan Ali Qadri.mp3" type="audio/mpeg">
+</audio>
 
 </section>
 
@@ -511,8 +524,11 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Seerat</a></li>
-                    <li><a href="#events">Upcoming Events</a></li>
-                    <li><a href="#durood">Durood Counter</a></li>
+                    <li><a href="naat sharif.html">Naat Sharif</a></li>
+                    <li><a href="events.html">Upcoming Events</a></li>
+                    <li><a href="seerat.html">Seerat-un-Nabi</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#durood">Durood Counter</a></li>
                 </ul>
             </div>
 
@@ -535,6 +551,7 @@
     </footer>
 
     <script src="script/script.js"></script>
+    <script src="script/naat sharif.js"></script>
     
     </body>
     </html>
