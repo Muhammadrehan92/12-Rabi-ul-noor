@@ -109,6 +109,11 @@
     background:#fff;
     box-shadow:0 12px 30px rgba(0,0,0,.10);
     cursor:pointer;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.gallery-item.hide{
+    display:none !important;
 }
 
 .gallery-item img{
