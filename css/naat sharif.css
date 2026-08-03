@@ -868,3 +868,147 @@ Lyrics
     font-weight:600;
 
 }
+
+/*==================================
+   RESPONSIVE MEDIA QUERIES (@768px)
+===================================*/
+
+@media (max-width: 768px) {
+
+    /* Hero Section */
+    .naat-hero {
+        height: 45vh;
+        min-height: 260px;
+        padding: 20px;
+    }
+
+    .naat-overlay h1 {
+        font-size: 34px;
+        margin-bottom: 10px;
+    }
+
+    .naat-overlay p {
+        font-size: 15px;
+    }
+
+    /* Featured Kalaam */
+    .featured-kalam {
+        padding: 40px 5%;
+    }
+
+    .featured-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 25px 20px;
+    }
+
+    .featured-icon {
+        margin: 0 auto;
+        width: 65px;
+        height: 65px;
+        font-size: 26px;
+    }
+
+    .featured-reciter {
+        justify-content: center;
+    }
+
+    .featured-content p {
+        margin: 0 auto 15px;
+        font-size: 13px;
+    }
+
+    .featured-buttons {
+        flex-direction: column !important;
+        width: 100% !important;
+        align-items: center !important;
+        gap: 12px !important;
+        margin-top: 15px !important;
+    }
+
+    .featured-buttons a.listen-btn,
+    .featured-buttons a.lyrics-btn {
+        width: 100% !important;
+        max-width: 280px !important;
+        height: 50px !important;
+        min-height: 50px !important;
+        max-height: 50px !important;
+        font-size: 15px !important;
+    }
+
+    .featured-audio-player {
+        max-width: 100%;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    /* Naat Cards Grid */
+    .naat-list {
+        width: 92%;
+        margin: 40px auto;
+    }
+
+    .naat-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .naat-card {
+        padding: 22px 18px;
+        min-height: auto;
+    }
+
+    /* Milad Categories */
+    .milad-categories {
+        padding: 50px 5%;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 35px;
+    }
+
+    .category-card {
+        padding: 30px 20px;
+    }
+
+    .category-card h3 {
+        font-size: 22px;
+    }
+
+    /* Top Reciters */
+    .top-reciters {
+        padding: 50px 5%;
+    }
+
+    .reciters-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .reciter-card {
+        padding: 20px 15px;
+    }
+
+    .reciter-card h3 {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .naat-overlay h1 {
+        font-size: 28px;
+    }
+
+    .reciters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-container {
+        padding: 20px 15px;
+    }
+}

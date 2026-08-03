@@ -520,3 +520,93 @@
     color:#D4AF37;
 
 }
+
+/*==================================
+   RESPONSIVE MEDIA QUERIES (@768px)
+===================================*/
+
+@media (max-width: 768px) {
+
+    .auth-page {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    /* Left Info Section */
+    .auth-info {
+        padding: 45px 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .info-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+        margin: 0 auto 20px;
+        border-radius: 18px;
+    }
+
+    .auth-info h1 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .auth-info > p {
+        font-size: 14px;
+        margin: 0 auto 25px;
+    }
+
+    .info-line {
+        justify-content: center;
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+
+    .info-line i {
+        width: auto;
+    }
+
+    /* Right Auth Form Box */
+    .auth-box {
+        padding: 40px 20px;
+    }
+
+    .form-box {
+        max-width: 100%;
+    }
+
+    .form-heading {
+        margin-bottom: 22px;
+        text-align: center;
+    }
+
+    .form-heading h2 {
+        font-size: 26px;
+    }
+
+    .input-field input {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .auth-info {
+        padding: 35px 15px;
+    }
+
+    .auth-box {
+        padding: 30px 15px;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .auth-info h1 {
+        font-size: 24px;
+    }
+}
