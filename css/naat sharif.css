@@ -665,62 +665,200 @@ Lyrics
 }
 
 .naat-grid{
-
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:30px;
-
+    align-items:stretch;
 }
 
 .naat-card{
-    background: #fff;
-    border-radius: 18px;
-    padding: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.12);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    min-height: 420px;   /* Sab cards ki same height */
-}
-.naat-icon{
-    width:80px;
-    height:80px;
-    margin:0 auto 20px;
-    background:#eef8f1;
+    background:#ffffff;
     border-radius:20px;
+    padding:28px 24px;
+    border:1px solid #e2ebe4;
+    box-shadow:0 8px 25px rgba(0,0,0,0.05);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:flex-start;
+    height:100%;
+    transition:all 0.3s ease;
+    box-sizing:border-box;
+}
 
+.naat-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(13,92,49,0.12);
+    border-color:#cde2d3;
+}
+
+.naat-card .naat-icon{
+    width:70px;
+    height:70px;
+    border-radius:18px;
+    background:#0D5C31;
+    color:#D4AF37;
     display:flex;
     justify-content:center;
     align-items:center;
+    font-size:30px;
+    margin:0 0 16px 0;
+    transition:0.3s;
 }
 
-.naat-icon i{
-    font-size:40px;
-    color:#0a6b3f;
-}
-.naat-card:hover{
-
-    transform:translateY(-10px);
-
+.naat-card:hover .naat-icon{
+    background:#D4AF37;
+    color:#0D5C31;
 }
 
-
+.naat-card .category{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    color:#8c6f10;
+    background:rgba(212,175,55,0.15);
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:10px;
+    letter-spacing:0.5px;
+}
 
 .naat-card h3{
-
-    padding:20px;
-    text-align:center;
-
+    font-size:20px;
+    font-weight:700;
+    color:#0D5C31;
+    margin:4px 0 10px;
+    padding:0;
+    text-align:left;
+    line-height:1.4;
 }
 
-.naat-card audio{
+.naat-card p{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#555;
+    font-size:14px;
+    margin-bottom:8px;
+    line-height:1.5;
+}
 
-    width:90%;
-    display:block;
-    margin:0 auto 25px;
+.naat-card p i{
+    color:#D4AF37;
+    font-size:15px;
+    width:18px;
+    text-align:center;
+}
 
+.naat-card .language{
+    display:inline-block;
+    background:#edf5ef;
+    color:#0D5C31;
+    padding:4px 12px;
+    font-size:13px;
+    border-radius:8px;
+    font-weight:600;
+    margin:6px 0 12px;
+}
+
+/* AUDIO PROGRESS BAR IN CARD */
+.card-audio-player{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:10px 0 16px;
+    box-sizing:border-box;
+}
+
+.card-audio-player .audio-time{
+    min-width:32px;
+    color:#555;
+    font-size:12px;
+    font-weight:600;
+    text-align:center;
+}
+
+.card-progress{
+    flex:1;
+    height:5px;
+    appearance:none;
+    -webkit-appearance:none;
+    background:#dce8df;
+    border-radius:10px;
+    outline:none;
+    cursor:pointer;
+}
+
+.card-progress::-webkit-slider-thumb{
+    appearance:none;
+    -webkit-appearance:none;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:#D4AF37;
+    border:3px solid #0D5C31;
+    cursor:pointer;
+}
+
+.card-progress::-moz-range-thumb{
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:#D4AF37;
+    border:3px solid #0D5C31;
+    cursor:pointer;
+}
+
+.naat-card .play-btn{
+    width:100% !important;
+    height:48px !important;
+    min-height:48px !important;
+    max-height:48px !important;
+    border:none !important;
+    border-radius:10px !important;
+    background:#0D5C31 !important;
+    color:#ffffff !important;
+    font-size:15px !important;
+    font-weight:600 !important;
+    font-family:inherit !important;
+    cursor:pointer !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:10px !important;
+    transition:all 0.3s ease !important;
+    margin-top:auto !important;
+}
+
+.naat-card .play-btn:hover{
+    background:#D4AF37 !important;
+    color:#0D5C31 !important;
+}
+
+.naat-card .lyrics-link{
+    width:100% !important;
+    height:48px !important;
+    min-height:48px !important;
+    max-height:48px !important;
+    border-radius:10px !important;
+    background:#edf5ef !important;
+    color:#0D5C31 !important;
+    font-size:15px !important;
+    font-weight:600 !important;
+    text-decoration:none !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:10px !important;
+    transition:all 0.3s ease !important;
+    margin-top:10px !important;
+    box-sizing:border-box !important;
+}
+
+.naat-card .lyrics-link:hover{
+    background:#D4AF37 !important;
+    color:#0D5C31 !important;
 }
 /*==============================
       MILAD CATEGORIES
