@@ -1119,20 +1119,25 @@ footer{
         left:0;
         width:100%;
         background:#0b5d2a;
+        display:flex;
         flex-direction:column;
+        flex-wrap:nowrap;
         align-items:center;
         max-height:0;
         overflow:hidden;
         transition:.4s;
+        z-index:1000;
     }
 
     .nav-links.active{
-        max-height:500px;
+        max-height:650px;
         padding:20px 0;
     }
 
     .nav-links li{
-        margin:15px 0;
+        margin:12px 0;
+        width:100%;
+        text-align:center;
     }
 
     .menu-toggle{
@@ -1149,9 +1154,11 @@ footer{
 
     nav ul{
         display:flex;
-        flex-wrap:wrap;
+        flex-direction:column;
+        flex-wrap:nowrap;
         justify-content:center;
-        gap:15px;
+        align-items:center;
+        gap:0;
     }
 
     .btn{
